@@ -85,5 +85,26 @@ public class Controller03 {
         System.out.println("age = " + age);
     }
 
+    // /main2/sub?name=son
+    @RequestMapping("sub9")
+    public void method9(@RequestParam(value = "name", required = false) String name){
+        //값을 적지 않아도 메소드가 일하게 하고싶을때는 required = false 써주면된다.
+        System.out.println("name = " + name);
+    }
 
+    // /main2/sub10?address=seoul&age=30
+    // /main2/sub10?address=jeju
+    @RequestMapping("sub10")
+    public void method10(@RequestParam("address") String address,
+                         @RequestParam(value = "age",required = false) Integer age){
+        System.out.println("address = " + address);
+        System.out.println("age = " + age);
+    }
+
+    // /main2/sub11
+    @RequestMapping("sub11")
+    public void method11(@RequestParam(value = "age",defaultValue = "0") Integer age){
+          //age에 값을넣지않아도  아무것도 안적어도 메소드는 일한다.
+        System.out.println("age = " + age);
+    }
 }
