@@ -22,4 +22,11 @@ public class Controller01 {
         System.out.println("안뇽!");
 
     }
+
+    @RequestMapping("path5")  // /는 생략가능
+    public void method5(){
+        System.out.println("Controller01.method5");
+    }
+
+
 }
