@@ -4,6 +4,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.lang.reflect.Member;
+
 @Controller
 @RequestMapping("main8")
 public class Controller08 {
@@ -20,4 +22,16 @@ public class Controller08 {
         model.addAttribute("propone","😶‍🌫️");
         model.addAttribute("propTWO","😌");
     }
+
+    @RequestMapping("sub3")
+    public void method3(Model model){
+        //모델을 이용 해서 내용을 바꾸기
+        // view name : /main8/sub3
+        // /WEB-INF/jsp/main8/sub3.jsp
+        model.addAttribute("maName","🍔햄버거");
+        model.addAttribute("yourAddress","🥗샐러드");
+        model.addAttribute("herEmail","🎂케이크");
+    }
+
+
 }
