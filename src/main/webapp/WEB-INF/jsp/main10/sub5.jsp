@@ -70,5 +70,15 @@
     </div>
 </c:forEach>
 
+<hr>
+<ul>
+<c:forEach items="${foodList}" var="f" varStatus="status">
+
+        <li> ${status.count} :${f}</li>
+
+
+</c:forEach>
+</ul>
+
 </body>
 </html>
