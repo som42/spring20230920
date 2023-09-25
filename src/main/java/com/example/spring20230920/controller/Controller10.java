@@ -83,5 +83,16 @@ public class Controller10 {
         model.addAttribute("moving",list);
     }
 
+    @RequestMapping("sub7")
+    public void method7(Model model){
+        model.addAttribute("a",3);
+        model.addAttribute("b",5);
+
+        //el은 +는 산술 연산 으로만 사용이 되기 때문에 "9", "8"도 더해서 17이 나온다.
+        model.addAttribute("c","8");
+        model.addAttribute("d","9");
+
+    }
+
 }
 
