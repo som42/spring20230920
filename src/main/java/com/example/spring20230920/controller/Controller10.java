@@ -94,5 +94,34 @@ public class Controller10 {
 
     }
 
+    @RequestMapping("sub8")
+    public void method8(Model model){
+        model.addAttribute("a",3);
+        model.addAttribute("b",5);
+
+        model.addAttribute("c","한여름");
+        model.addAttribute("d","한겨울");
+
+        model.addAttribute("e","11");
+        model.addAttribute("f","2");
+        model.addAttribute("g",2);
+        //${e > f} : false
+        //${e > g} : true 타입이 다르면 한쪽을 타입을 맞춰준다.
+    }
+
+    @RequestMapping("sub9")
+    public void method9(Model model){
+        model.addAttribute("a","java");
+        model.addAttribute("b","");
+
+        model.addAttribute("c",List.of(3,4));
+        model.addAttribute("d",List.of());
+
+        model.addAttribute("e",Map.of("name","son"));
+        model.addAttribute("e",Map.of());
+
+        model.addAttribute("g",null);
+    }
+
 }
 
