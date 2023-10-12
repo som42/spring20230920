@@ -66,7 +66,7 @@ public class Controller03 {
         Integer a = Integer.valueOf(age);
     }
 
-    ///main2/sub7?name=손&age=50
+    // /main2/sub7?name=손&age=50
     //숫자 넣을때 바로 그냥 Integer넣어두된다.
     @RequestMapping("sub7")
     public void method7(@RequestParam("name") String name,

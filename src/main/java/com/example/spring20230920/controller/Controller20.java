@@ -273,13 +273,11 @@ public class Controller20 {
             }
         }
         String sql = """
-              SELECT DISTINCT Country, SupplierName
+                SELECT DISTINCT Country, SupplierName
                 FROM  suppliers
-                WHERE Country IN ("""
-                +
-                a
-                +
-                ")";
+                WHERE Country IN (
+                """
+                + a + ")";
 
 
         Connection connection = dataSource.getConnection();

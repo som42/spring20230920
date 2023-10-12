@@ -6,12 +6,14 @@ SELECT * FROM  w3schools.products;
 SELECT * FROM customers;
 SELECT * FROM customers;
 
+SELECT * FROM products;
+SELECT * FROM employees;
+SELECT * FROM shippers;
+SELECT * FROM customers;
 SELECT * FROM categories;
+SELECT * FROM suppliers;
 SELECT * FROM orderdetails;
 SELECT * FROM orders;
-SELECT * FROM products;
-SELECT * FROM shippers;
-SELECT * FROM suppliers;
 
 --
 SELECT CustomerName -- column 명 나열

@@ -24,7 +24,7 @@ public class Controller18 {
         String password = "1234";
 
         String sql = """
-                SELECT customerName
+                SELECT customerName 
                 FROM customers
                 WHERE customerID = 1
                 """;

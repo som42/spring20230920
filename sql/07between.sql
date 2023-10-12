@@ -1,7 +1,7 @@
 -- between
-
 SELECT * FROM products
 WHERE Price >= 10 AND Price <= 13;
+
 
 SELECT * FROM products
 WHERE Price BETWEEN  10 AND 13; -- 값 포함됨

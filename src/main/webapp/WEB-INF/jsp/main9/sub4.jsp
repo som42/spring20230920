@@ -39,6 +39,5 @@
 <h3>${color.blue}</h3>
 <h3>${color["black"]}</h3>
 
-
 </body>
 </html>

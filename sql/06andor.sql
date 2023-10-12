@@ -47,7 +47,7 @@ WHERE Price >= 100 AND Price <= 200;
 SELECT * FROM orders
 WHERE OrderDate < '1998-01-01' AND OrderDate >= '1997-01-01';
 
--- 여러 연산자 조합시 () 사용해서 우선수위 결정해줄 것
+-- 여러 연산자 조합시 () 사용해서 우선 순위 결정해줄 것
 --  and 그리고 or 또는
 -- 1번 카테고리인 10달러 미만, 100달러 이상 상품 조회
 SELECT * FROM products

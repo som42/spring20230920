@@ -221,38 +221,40 @@ public class Controller19 {
         // jsp 로 forward
     }
 
-    @GetMapping("sub9")
-    public String method9(Integer pid, Model model) throws SQLException {
-        // 쿼리 작성
-        String sql = """
-               SELECT  ProductID, ProductName, Unit, Price
+   @GetMapping("sub9")
+   public String method9(Integer pid, Model model) throws SQLException {
+       //쿼리 작성
+       String sql = """
+               SELECT ProductID, ProductName, Unit, Price
                FROM products
-               WHERE ProductID 
-                """;
+               WHERE ProductID =
+               """;
+       sql += pid;
 
-        Connection connection = dataSource.getConnection();
-        Statement statement = connection.createStatement();
-        List<MyDto16> list = new ArrayList<>();
-        // 쿼리 실행
-        ResultSet resultSet = statement.executeQuery(sql);
+       Connection connection = dataSource.getConnection();
+       Statement statement = connection.createStatement();
+       List<MyDto16> list = new ArrayList<>();
 
-        try(connection; statement; resultSet){
-        // 실행 결과 처리
-        while (resultSet.next()){
-            MyDto16 dto = new MyDto16();
-            dto.setId(resultSet.getInt(1));
-            dto.setName(resultSet.getString(2));
-            dto.setUnit(resultSet.getString(3));
-            dto.setPrice(resultSet.getDouble(4));
+       // 쿼리 실행
+       ResultSet resultSet = statement.executeQuery(sql);
+       try(connection; statement; resultSet){
+           //실행 결과 처리
+           while (resultSet.next()){
+               MyDto16 dto = new MyDto16();
+               dto.setId(resultSet.getInt(1));
+               dto.setName(resultSet.getString(2));
+               dto.setUnit(resultSet.getString(3));
+               dto.setUnit(resultSet.getString(4));
 
-            list.add(dto);
-         }
-        }
-        // 처리한 결과 모델에 넣기
-        model.addAttribute("productList", list);
-        // 적절한 view로 포워드
-        return "/main19/sub5";
-    }
+               list.add(dto);
+           }
+       }
+       //처리한 결과 모델에 넣기
+       model.addAttribute("productList",list);
+       // 적절한 view로 포원드
+       return "/main19/sub5";
+   }
+
 
     @GetMapping("sub10")
     public void method10(){
