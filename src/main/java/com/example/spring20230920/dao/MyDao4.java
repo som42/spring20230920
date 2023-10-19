@@ -1,9 +1,7 @@
 package com.example.spring20230920.dao;
 
 import com.example.spring20230920.domain.*;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -83,5 +81,74 @@ public interface MyDao4 {
             VALUE (#{firstName},#{lastName})
             """)
     int insert2(MyDto32 emp);
-    // 몇개 행에 영향을 미쳤는가
+
+    // 삭제 하는 쿼리
+    @Delete("""
+            DELETE  FROM  customers
+            WHERE CustomerID = #{id}
+            """)
+    // 파라미터랑 똑같이 #{ 안에 넣어주면 된다 }
+    int delete1(Integer id);
+
+    @Delete("""
+            DELETE FROM products
+            WHERE ProductID = #{pid}
+            """)
+    int delete2(Integer pid);
+
+    // 업데이트
+    // 별칭을 줬을때는 * 로 하면 값이 제대로 안나온다.
+    @Select("""
+            SELECT EmployeeID id,
+                   LastName,
+                   FirstName,
+                   BirthDate,
+                   Photo, 
+                   Notes
+            FROM employees
+            WHERE EmployeeID = #{id}
+            """)
+    MyDto33Employee select8(Integer id);
+
+    @Update("""
+            UPDATE employees
+            SET LastName = #{lastName},
+                FirstName = #{firstName},
+                Photo = #{photo},
+                Notes = #{notes},
+                BirthDate = #{birthDate}
+            WHERE EmployeeID = #{id}  
+            """)
+    int update1(MyDto33Employee employee);
+
+
+    //고객 조회
+    @Select("""
+            SELECT CustomerID id,
+                   CustomerName,
+                   ContactName,
+                   Country,
+                   City,
+                   PostalCode,
+                   Address
+            FROM customers
+            WHERE CustomerID = #{id}
+            """)
+    MyDto34Customer select9(Integer id);
+
+    // 고객 수정
+    @Update("""
+            UPDATE customers
+            SET CustomerName = #{customerName},
+                ContactName = #{contactName},
+                Country = #{country},
+                City = #{city},
+                PostalCode = #{postalCode},
+                Address = #{address}
+            WHERE CustomerID = #{id}
+            """)
+    int update2(MyDto34Customer customer);
+
+
+
 }
