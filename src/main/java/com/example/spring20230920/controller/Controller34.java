@@ -35,7 +35,7 @@ public class Controller34 {
         if (file != null && file.getSize() > 0){
 
         String key = "temp/" + file.getOriginalFilename();
-
+                // 객체 생성하고 s3Cilent를 사용하여 파일을 amazonS3에 업로드하다.
                 PutObjectRequest objectRequest = PutObjectRequest.builder()
                         .bucket(bucketName)
                         .acl(ObjectCannedACL.PUBLIC_READ)

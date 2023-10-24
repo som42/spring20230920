@@ -14,6 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 @RequiredArgsConstructor
 public class Controller35 {
 
+
     @GetMapping("sub1")
     public void method1(){
 

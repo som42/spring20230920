@@ -224,7 +224,7 @@
     </div>
 </div>
 
-<%-- 파일 넘기기 --%>
+<%-- 파일 넘기기 form 써서--%>
 <div>
     <div>
         <input type="text" id="input12" value="한여름">
@@ -243,7 +243,21 @@
             }
         </script>
     </div>
-
+</div>
+<%-- get 써서 axios해보기 --%>
+<div>
+    <div>
+        <button onclick="ajax13()">button13</button>
+        <script>
+            function ajax13(){
+                // axios.request({
+                //     url:"/main35/sub11",
+                //     method: "get"
+                // });
+                axios.get("/main35/sub11");
+            }
+        </script>
+    </div>
 </div>
 </body>
 </html>
