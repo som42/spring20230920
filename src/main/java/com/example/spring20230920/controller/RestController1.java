@@ -72,4 +72,10 @@ public class RestController1 {
     public List<Integer> method6(){
         return dao.getCustomerIdList();
     }
+
+    @GetMapping("sub7")
+    @ResponseBody
+    public List<Integer> method7(){
+        return dao.getEmployeesIdList();
+    }
 }
